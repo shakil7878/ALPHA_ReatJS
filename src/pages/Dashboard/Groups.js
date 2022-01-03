@@ -21,6 +21,7 @@ import FormLabel from '@mui/material/FormLabel';
 import GroupPopupTable from './GroupPopupTable';
 import Fab from '@mui/material/Fab';
 import MinimizeIcon from '@mui/icons-material/Minimize';
+import GroupChildModal from '../Dashboard/GroupChildModal'
 
 const style = {
   position: 'absolute',
@@ -148,6 +149,10 @@ paddingLeft:'0',
     },
   ];
 
+
+
+
+
 const Groups = () => {
   
 
@@ -194,9 +199,7 @@ const Groups = () => {
          
           <Box sx={textRow}>
           <TextField
-            
             margin="dense"
-            
             id="name"
             label="Group Name"
             type="text"
@@ -267,9 +270,12 @@ const Groups = () => {
 <DialogTitle>List of Employees</DialogTitle>
 
 <Box sx={textRow_inner}>
-<Fab color="primary" aria-label="add">
+{/* <Fab color="primary" aria-label="add">
         <AddIcon />
-      </Fab>
+        
+      </Fab> */}
+
+      <GroupChildModal />
       {/* <CommonButton onClick={handleOpen}>Open Child Modal</CommonButton> */}
       <Fab sx={button_second} color="secondary" aria-label="add">
         <MinimizeIcon />
@@ -284,7 +290,7 @@ const Groups = () => {
         </DialogContent>
         <Divider />
         <DialogActions>
-      
+       
         <Button onClick={handleClose}>Add Group</Button>
           <Button onClick={handleClose}>Cancel</Button>
          
